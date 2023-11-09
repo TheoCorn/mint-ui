@@ -6,6 +6,8 @@ component Ui.Notification {
   /* The duration of the notification. */
   property duration : Number = 0
 
+  property color : String = "--primary-color" 
+
   /* A state for tracking the whether or not the notification is shown. */
   state shown : Bool = false
 
@@ -49,7 +51,7 @@ component Ui.Notification {
 
     &::before {
       animation: duration-notification linear both #{duration}ms;
-      background: var(--primary-color);
+      background: var({color});
       content: "";
 
       position: absolute;
